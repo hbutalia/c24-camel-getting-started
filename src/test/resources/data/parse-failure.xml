@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<purchase_order xmlns="http://www.c24.biz/io/GettingStarted/PurchaseOrder"
+                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                xsi:schemaLocation="http://www.c24.biz/io/GettingStarted/PurchaseOrder">
+    <invalid_element/>
+    <po_number>01-234123</po_number>
+    <purchase_date>2014-05-04T18:13:51.0Z</purchase_date>
+    <shipping_date>2014-05-10</shipping_date>
+    <delivery_time_slot>09:00:00</delivery_time_slot>
+    <customer>
+        <name>Acme Widgets</name>
+        <address>100 A Street</address>
+    </customer>
+    <shipper>
+        <name>APC Ltd</name>
+        <per_ounce_rate>12</per_ounce_rate>
+    </shipper>
+    <line_items>
+        <description>Large Mallet</description>
+        <per_unit_ounces>12</per_unit_ounces>
+        <price>50.05</price>
+        <quantity>3</quantity>
+        <currency>USD</currency>
+    </line_items>
+    <line_items>
+        <description>Hinge and Bracket</description>
+        <per_unit_ounces>5</per_unit_ounces>
+        <price>12</price>
+        <quantity>2</quantity>
+        <currency>USD</currency>
+    </line_items>
+    <line_items>
+        <description>3" Screws</description>
+        <per_unit_ounces>1</per_unit_ounces>
+        <price>2.50</price>
+        <quantity>1</quantity>
+        <currency>USD</currency>
+    </line_items>
+</purchase_order>

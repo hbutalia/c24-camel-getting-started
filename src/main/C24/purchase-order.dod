@@ -1,0 +1,96 @@
+<?xml version="1.0" ?>
+<dataModel IOversion="3.1.0" encrypted="false" targetNamespace="http://www.c24.biz/io/GettingStarted/PurchaseOrder" inputMask="XML" outputMask="XML" elementFormDefault="Qualified" attributeFormDefault="Unqualified" encoding="UTF-8" hibernateIDGeneratorMethodDefault="native" name="purchase-order.dod" version="0.0.18">
+  <element identifier="false" min="1" max="1" typeRef="purchase_order" name="purchase_order"></element>
+  <type>
+    <complexType specifyStructure="true" abstract="false" beanInterface="" contentModel="Sequence" specialisation="Generic complex" excludeFromDatabase="false" processAsBatch="false" name="customer">
+      <element identifier="false" min="1" max="1" typeRef="#string" name="name"></element>
+      <element identifier="false" min="1" max="1" typeRef="#string" name="address"></element>
+    </complexType>
+  </type>
+  <type>
+    <complexType specifyStructure="true" abstract="false" beanInterface="" contentModel="Sequence" specialisation="Generic complex" excludeFromDatabase="false" processAsBatch="false" name="line_item">
+      <element identifier="false" min="1" max="1" typeRef="#string" name="description"></element>
+      <element identifier="false" min="1" max="1" typeRef="#number_decimal" name="per_unit_ounces"></element>
+      <element identifier="false" min="1" max="1" typeRef="#number_double" name="price"></element>
+      <element identifier="false" min="1" max="1" typeRef="#number_int" name="quantity"></element>
+      <element identifier="false" min="1" max="1" name="currency">
+        <type>
+          <atomicSimpleType baseType="#string" name="Currency Code">
+            <facet facetType="min_length">
+              <value>3</value>
+            </facet>
+            <facet facetType="max_length">
+              <value>3</value>
+            </facet>
+            <enumerationRef ref="CurrencyCode"></enumerationRef>
+          </atomicSimpleType>
+        </type>
+      </element>
+    </complexType>
+  </type>
+  <type>
+    <complexType specifyStructure="true" abstract="false" beanInterface="" contentModel="Sequence" specialisation="Generic complex" excludeFromDatabase="false" processAsBatch="false" name="shipper">
+      <element identifier="false" min="1" max="1" typeRef="#string" name="name"></element>
+      <element identifier="false" min="1" max="1" typeRef="#number_decimal" name="per_ounce_rate"></element>
+      <element identifier="false" min="0" max="-1" name="day_of_week">
+        <type>
+          <atomicSimpleType baseType="#string" name="DayOfWeek">
+            <enumerationRef ref="DayOfWeek"></enumerationRef>
+          </atomicSimpleType>
+        </type>
+      </element>
+    </complexType>
+  </type>
+  <enumeration caseSensitive="true" name="CurrencyCode">
+    <value value="GBP" name="British Pounds">
+      <annotation></annotation>
+    </value>
+    <value value="USD" name="US Dollars">
+      <annotation></annotation>
+    </value>
+    <value value="EUR" name="Euros">
+      <annotation></annotation>
+    </value>
+  </enumeration>
+  <enumeration caseSensitive="true" name="DayOfWeek">
+    <value value="1" name="Monday">
+      <annotation></annotation>
+    </value>
+    <value value="2" name="Tuesday">
+      <annotation></annotation>
+    </value>
+    <value value="3" name="Wednesday">
+      <annotation></annotation>
+    </value>
+    <value value="4" name="Thursday">
+      <annotation></annotation>
+    </value>
+    <value value="5" name="Friday">
+      <annotation></annotation>
+    </value>
+    <value value="6" name="Saturday">
+      <annotation></annotation>
+    </value>
+    <value value="7" name="Sunday">
+      <annotation></annotation>
+    </value>
+  </enumeration>
+  <type>
+    <complexType specifyStructure="true" abstract="false" beanInterface="" contentModel="Sequence" specialisation="Generic complex" excludeFromDatabase="false" processAsBatch="false" name="purchase_orders">
+      <element identifier="false" min="1" max="-1" typeRef="purchase_order" name="purchase_orders"></element>
+    </complexType>
+  </type>
+  <type>
+    <complexType specifyStructure="true" abstract="false" beanInterface="" contentModel="Sequence" specialisation="Generic complex" excludeFromDatabase="false" processAsBatch="false" name="purchase_order">
+      <element identifier="false" min="1" max="1" typeRef="#string" name="po_number"></element>
+      <element identifier="false" min="1" max="1" typeRef="#date_datetime" name="purchase_date"></element>
+      <element identifier="false" min="1" max="1" typeRef="#date_date" name="shipping_date"></element>
+      <element identifier="false" min="1" max="1" typeRef="#date_time" name="delivery_time_slot"></element>
+      <element identifier="false" min="1" max="1" typeRef="customer" name="customer"></element>
+      <element identifier="false" min="0" max="1" typeRef="shipper" name="shipper"></element>
+      <element identifier="false" min="0" max="-1" typeRef="line_item" name="line_items"></element>
+    </complexType>
+  </type>
+  <namespace uri="http://www.w3.org/2001/XMLSchema" prefix="xs"></namespace>
+  <namespace uri="http://www.c24.biz/io/GettingStarted/PurchaseOrder" prefix=""></namespace>
+</dataModel>

@@ -1,0 +1,92 @@
+<?xml version="1.0" ?>
+<dataModel IOversion="3.1.0" encrypted="false" targetNamespace="http://c24.biz/io/gettingstarted" elementFormDefault="Qualified" attributeFormDefault="Unqualified" encoding="UTF-8" hibernateIDGeneratorMethodDefault="native" name="FlatOrder.dod" version="0.0.4">
+  <type>
+    <complexType specifyStructure="true" abstract="false" beanInterface="" contentModel="Sequence" specialisation="Generic complex" excludeFromDatabase="false" processAsBatch="false" name="Order">
+      <element identifier="false" min="1" max="1" primaryKey="true" name="ID">
+        <type>
+          <atomicSimpleType baseType="#string" name="Order_ID">
+            <facet facetType="max_length">
+              <value>36</value>
+            </facet>
+          </atomicSimpleType>
+        </type>
+      </element>
+      <element identifier="false" min="0" max="1" name="po_number">
+        <type>
+          <atomicSimpleType baseType="#string" name="Order_po_number">
+            <facet facetType="max_length">
+              <value>30</value>
+            </facet>
+          </atomicSimpleType>
+        </type>
+      </element>
+      <element identifier="false" min="0" max="1" typeRef="#date_sql_timestamp" name="purchase_date"></element>
+      <element identifier="false" min="0" max="1" typeRef="#date_sql_date" name="shipping_date"></element>
+      <element identifier="false" min="0" max="1" typeRef="#date_sql_time" name="delivery_time_slot"></element>
+      <element identifier="false" min="0" max="1" name="customer_name">
+        <type>
+          <atomicSimpleType baseType="#string" name="Order_customer_name">
+            <facet facetType="max_length">
+              <value>255</value>
+            </facet>
+          </atomicSimpleType>
+        </type>
+      </element>
+      <element identifier="false" min="0" max="1" name="address">
+        <type>
+          <atomicSimpleType baseType="#string" name="Order_address">
+            <facet facetType="max_length">
+              <value>65535</value>
+            </facet>
+          </atomicSimpleType>
+        </type>
+      </element>
+      <element identifier="false" min="0" max="1" name="shipper_name">
+        <type>
+          <atomicSimpleType baseType="#string" name="Order_shipper_name">
+            <facet facetType="max_length">
+              <value>255</value>
+            </facet>
+          </atomicSimpleType>
+        </type>
+      </element>
+      <element identifier="false" min="0" max="1" typeRef="#number_decimal" name="per_ounce_rate"></element>
+      <element identifier="false" min="0" max="1" name="day_of_week">
+        <type>
+          <atomicSimpleType baseType="#string" name="Order_day_of_week">
+            <facet facetType="max_length">
+              <value>100</value>
+            </facet>
+          </atomicSimpleType>
+        </type>
+      </element>
+      <element identifier="false" min="0" max="1" name="line_item_description">
+        <type>
+          <atomicSimpleType baseType="#string" name="Order_line_item_description">
+            <facet facetType="max_length">
+              <value>65535</value>
+            </facet>
+          </atomicSimpleType>
+        </type>
+      </element>
+      <element identifier="false" min="0" max="1" typeRef="#number_decimal" name="per_unit_ounces"></element>
+      <element identifier="false" min="0" max="1" typeRef="#number_double" name="price"></element>
+      <element identifier="false" min="0" max="1" typeRef="#number_int" name="quantity"></element>
+      <element identifier="false" min="0" max="1" name="currency">
+        <type>
+          <atomicSimpleType baseType="#string" name="Order_currency">
+            <facet facetType="max_length">
+              <value>10</value>
+            </facet>
+          </atomicSimpleType>
+        </type>
+      </element>
+    </complexType>
+  </type>
+  <element identifier="false" min="1" max="1" typeRef="Order" name="Order"></element>
+  <type>
+    <complexType specifyStructure="true" abstract="false" beanInterface="" contentModel="Sequence" specialisation="Generic complex" excludeFromDatabase="false" processAsBatch="false" name="Orders">
+      <element identifier="false" min="0" max="-1" typeRef="Order" name="Orders"></element>
+    </complexType>
+  </type>
+</dataModel>

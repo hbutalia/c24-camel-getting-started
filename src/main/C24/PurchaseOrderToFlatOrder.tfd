@@ -1,0 +1,77 @@
+<?xml version="1.0" ?>
+<transform IOversion="3.1.0" readOnly="false" encrypted="false" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="PurchaseOrderToFlatOrder.tfd">
+  <input endID="0" modelRef="purchase-order.dod" typeRef="purchase_order" path="" required="false"></input>
+  <contextPath input="false" endID="0" contextRef="Orders" id="OrdersO000"></contextPath>
+  <localTransformRef refId="SinglePORecord_OrdersO00000" x="171" y="74" id="OrdersO00000"></localTransformRef>
+  <contextPath input="true" endID="0" contextRef="" id="OrdersO0000000"></contextPath>
+  <contextPath input="true" endID="0" contextRef="line_items" id="OrdersO0000001"></contextPath>
+  <translation inputID="OrdersO00000" inputPort="0" outputID="OrdersO000" outputPort="0"></translation>
+  <translation inputID="OrdersO0000000" inputPort="0" outputID="OrdersO00000" outputPort="0"></translation>
+  <translation inputID="OrdersO0000001" inputPort="0" outputID="OrdersO00000" outputPort="1"></translation>
+  <output endID="0" modelRef="FlatOrder.dod" typeRef="Orders" path="" required="false"></output>
+  <localTransform id="SinglePORecord_OrdersO00000">
+    <transform IOversion="3.1.0" readOnly="false" encrypted="false" processingOrder="Outputs" validateInputs="false" validateOutputs="false" saveLayout="true" name="SinglePORecord">
+      <input endID="0" modelRef="purchase-order.dod" typeRef="purchase_order" path="" required="false"></input>
+      <input endID="1" modelRef="purchase-order.dod" typeRef="line_item" path="" required="false"></input>
+      <contextPath input="false" endID="0" contextRef="ID" id="IDO000"></contextPath>
+      <javaMethodRef refId="generateId_IDO00000" x="378" y="21" id="IDO00000"></javaMethodRef>
+      <contextPath input="false" endID="0" contextRef="address" id="addressO000"></contextPath>
+      <contextPath input="true" endID="0" contextRef="customer/address" id="addressO00000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="currency" id="currencyO000"></contextPath>
+      <contextPath input="true" endID="1" contextRef="currency" id="currencyO00000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="customer_name" id="customernameO000"></contextPath>
+      <contextPath input="true" endID="0" contextRef="customer/name" id="customernameO00000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="day_of_week" id="dayofweekO000"></contextPath>
+      <contextPath input="true" endID="0" contextRef="shipper/day_of_week" id="dayofweekO00000"></contextPath>
+      <contextPath input="true" endID="0" contextRef="delivery_time_slot" id="deliverytimeslotO0000000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="delivery_time_slot" id="deliverytimeslotO000"></contextPath>
+      <transformMethod name="CONVERTDATE" type="#date_sql_time" x="212" y="92" id="deliverytimeslotO00000"></transformMethod>
+      <contextPath input="false" endID="0" contextRef="line_item_description" id="lineitemdescriptionO000"></contextPath>
+      <contextPath input="true" endID="1" contextRef="description" id="lineitemdescriptionO00000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="per_ounce_rate" id="perouncerateO000"></contextPath>
+      <contextPath input="true" endID="0" contextRef="shipper/per_ounce_rate" id="perouncerateO00000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="per_unit_ounces" id="perunitouncesO000"></contextPath>
+      <contextPath input="true" endID="1" contextRef="per_unit_ounces" id="perunitouncesO00000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="po_number" id="ponumberO000"></contextPath>
+      <contextPath input="true" endID="0" contextRef="po_number" id="ponumberO00000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="price" id="priceO000"></contextPath>
+      <contextPath input="true" endID="1" contextRef="price" id="priceO00000"></contextPath>
+      <contextPath input="true" endID="0" contextRef="purchase_date" id="purchasedateO0000000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="purchase_date" id="purchasedateO000"></contextPath>
+      <transformMethod name="CONVERTDATE" type="#date_sql_timestamp" x="232" y="43" id="purchasedateO00000"></transformMethod>
+      <contextPath input="false" endID="0" contextRef="quantity" id="quantityO000"></contextPath>
+      <contextPath input="true" endID="1" contextRef="quantity" id="quantityO00000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="shipper_name" id="shippernameO000"></contextPath>
+      <contextPath input="true" endID="0" contextRef="shipper/name" id="shippernameO00000"></contextPath>
+      <contextPath input="true" endID="0" contextRef="shipping_date" id="shippingdateO0000000"></contextPath>
+      <contextPath input="false" endID="0" contextRef="shipping_date" id="shippingdateO000"></contextPath>
+      <transformMethod name="CONVERTDATE" type="#date_sql_date" x="341" y="68" id="shippingdateO00000"></transformMethod>
+      <translation inputID="IDO00000" inputPort="0" outputID="IDO000" outputPort="0"></translation>
+      <translation inputID="addressO00000" inputPort="0" outputID="addressO000" outputPort="0"></translation>
+      <translation inputID="currencyO00000" inputPort="0" outputID="currencyO000" outputPort="0"></translation>
+      <translation inputID="customernameO00000" inputPort="0" outputID="customernameO000" outputPort="0"></translation>
+      <translation inputID="dayofweekO00000" inputPort="0" outputID="dayofweekO000" outputPort="0"></translation>
+      <translation inputID="deliverytimeslotO00000" inputPort="0" outputID="deliverytimeslotO000" outputPort="0"></translation>
+      <translation inputID="deliverytimeslotO0000000" inputPort="0" outputID="deliverytimeslotO00000" outputPort="0"></translation>
+      <translation inputID="lineitemdescriptionO00000" inputPort="0" outputID="lineitemdescriptionO000" outputPort="0"></translation>
+      <translation inputID="perouncerateO00000" inputPort="0" outputID="perouncerateO000" outputPort="0"></translation>
+      <translation inputID="perunitouncesO00000" inputPort="0" outputID="perunitouncesO000" outputPort="0"></translation>
+      <translation inputID="ponumberO00000" inputPort="0" outputID="ponumberO000" outputPort="0"></translation>
+      <translation inputID="priceO00000" inputPort="0" outputID="priceO000" outputPort="0"></translation>
+      <translation inputID="purchasedateO00000" inputPort="0" outputID="purchasedateO000" outputPort="0"></translation>
+      <translation inputID="purchasedateO0000000" inputPort="0" outputID="purchasedateO00000" outputPort="0"></translation>
+      <translation inputID="quantityO00000" inputPort="0" outputID="quantityO000" outputPort="0"></translation>
+      <translation inputID="shippernameO00000" inputPort="0" outputID="shippernameO000" outputPort="0"></translation>
+      <translation inputID="shippingdateO00000" inputPort="0" outputID="shippingdateO000" outputPort="0"></translation>
+      <translation inputID="shippingdateO0000000" inputPort="0" outputID="shippingdateO00000" outputPort="0"></translation>
+      <output endID="0" modelRef="FlatOrder.dod" typeRef="Order" path="" required="false"></output>
+      <javaMethod id="generateId_IDO00000">
+        <libraryMethod>false</libraryMethod>
+        <methodName>generateId</methodName>
+        <output type="#string"></output>
+        <code>return java.util.UUID.randomUUID().toString();</code>
+      </javaMethod>
+    </transform>
+  </localTransform>
+  <transformTestSuite></transformTestSuite>
+</transform>
