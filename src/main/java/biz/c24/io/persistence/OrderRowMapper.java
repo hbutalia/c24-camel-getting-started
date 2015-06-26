@@ -15,8 +15,6 @@ import java.util.Map;
 @Component
 public class OrderRowMapper implements Processor {
 
-    private BeanPropertyRowMapper beanPropertyRowMapper;
-
     @Override
     public void process(Exchange exchange) throws Exception {
         Map<String, Object> orderMap = exchange.getIn().getBody(Map.class);
