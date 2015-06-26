@@ -48,7 +48,7 @@
         <appender-ref ref="consoleAppender"/>
     </root>
 
-    <logger name="biz.c24.io" level="INFO">
+    <logger name="biz.c24.io" level="DEBUG">
         <appender-ref ref="consoleAppender" additivity="false"/>
     </logger>
 
