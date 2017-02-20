@@ -22,9 +22,9 @@
         <slf4j.version>1.7.10</slf4j.version>
         <logback.version>1.1.2</logback.version>
 
-        <c24.io.api.version>4.7.7</c24.io.api.version>
-        <c24.io.studio.version>4.7.6</c24.io.studio.version>
-        <c24.io.maven.version>4.7.1</c24.io.maven.version>
+        <c24.io.api.version>4.9.2</c24.io.api.version>
+        <c24.io.studio.version>4.9.2</c24.io.studio.version>
+        <c24.io.maven.version>4.9.0</c24.io.maven.version>
         <c24.io.camel.version>1.0.1</c24.io.camel.version>
         <c24.io.spring.version>3.0.7</c24.io.spring.version>
         <spring.framework.version>4.1.5.RELEASE</spring.framework.version>
