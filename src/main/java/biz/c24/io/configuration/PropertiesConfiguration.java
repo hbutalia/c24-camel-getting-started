@@ -15,7 +15,7 @@ import org.springframework.core.io.Resource;
  * Any property can be overridden by including it in an external property file. The file is loaded at
  * startup by means of a system property called PROPERTY_FILE_LOCATION
  */
-@Configuration
+//@Configuration
 public class PropertiesConfiguration {
 
     private final static Logger LOG = LoggerFactory.getLogger(PropertiesConfiguration.class);
